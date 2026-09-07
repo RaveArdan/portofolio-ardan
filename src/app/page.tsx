@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FaPython, FaDatabase, FaLinux, FaNetworkWired, FaWhatsapp } from "react-icons/fa";
 import { SiCisco, SiGnubash, SiKalilinux } from "react-icons/si";
 import { Shield, Server, Wifi, ArrowUpRight, GraduationCap, Briefcase, User, Sparkles, FolderKanban, Mail, MessageSquare, Send } from "lucide-react";
@@ -203,7 +203,7 @@ export default function Home() {
     return (-c / 2) * (t * (t - 2) - 1) + b;
   };
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (!element) return;
@@ -265,7 +265,7 @@ export default function Home() {
     }
   };
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
   };
