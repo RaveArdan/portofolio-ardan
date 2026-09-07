@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FaPython, FaDatabase, FaLinux, FaNetworkWired, FaWhatsapp } from "react-icons/fa";
 import { SiCisco, SiGnubash, SiKalilinux } from "react-icons/si";
-import { Shield, Server, Wifi, ArrowUpRight, GraduationCap, Briefcase, User, Sparkles, FolderKanban, Mail, MessageSquare, Send } from "lucide-react";
+import { Shield, Server, Wifi, ArrowUpRight, GraduationCap, Briefcase, User, Sparkles, FolderKanban, Mail, MessageSquare, Send, Menu, X } from "lucide-react";
 import DarkVeil from '../components/DarkVeil';
 
 const navItems = [
@@ -176,6 +176,7 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -224,6 +225,7 @@ export default function Home() {
 
     requestAnimationFrame(animation);
     setActiveSection(id);
+    setIsMobileMenuOpen(false);
   };
 
   const handleEmailSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -279,35 +281,74 @@ export default function Home() {
       </div>
 
       {/* Navbar */}
-      <nav className={`fixed top-0 w-full z-50 p-6 flex justify-between items-center transition-all duration-300 ${isScrolled ? "bg-[#050505]/80 backdrop-blur-md shadow-lg border-b border-[#00FFFF]/10" : "bg-transparent"}`}>
-        <div>
-          <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-2xl font-extrabold tracking-tight text-white hover:text-[#00FFFF] transition-colors">
-            Ardan.
-          </a>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-4 md:gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => scrollToSection(e, item.id)}
-              className={`inline-block text-sm md:text-base font-semibold transition-all duration-300 hover:text-[#00FFFF] hover:-translate-y-0.5 ${
-                activeSection === item.id ? "text-[#FF00FF] scale-110 drop-shadow-[0_0_8px_rgba(255,0,255,0.4)]" : "text-gray-400"
-              }`}
-            >
-              {item.name}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? "bg-[#050505]/95 backdrop-blur-md shadow-lg border-b border-[#00FFFF]/10" : "bg-transparent"}`}>
+        <div className="p-6 flex justify-between items-center">
+          <div>
+            <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-2xl font-extrabold tracking-tight text-white hover:text-[#00FFFF] transition-colors">
+              Ardan.
             </a>
-          ))}
+          </div>
+          
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-4 md:gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => scrollToSection(e, item.id)}
+                className={`inline-block text-sm md:text-base font-semibold transition-all duration-300 hover:text-[#00FFFF] hover:-translate-y-0.5 ${
+                  activeSection === item.id ? "text-[#FF00FF] scale-110 drop-shadow-[0_0_8px_rgba(255,0,255,0.4)]" : "text-gray-400"
+                }`}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-gray-300 hover:text-white transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden border-t border-gray-800 bg-[#050505]/95 backdrop-blur-lg overflow-hidden"
+            >
+              <div className="flex flex-col px-6 py-4 space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(e) => scrollToSection(e, item.id)}
+                    className={`block text-lg font-medium transition-colors ${
+                      activeSection === item.id ? "text-[#FF00FF]" : "text-gray-400"
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-40 pb-32 space-y-40">
         
         {/* About / Hero */}
         <motion.section id="about" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="scroll-mt-40">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="flex flex-col space-y-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Text Content (Second on mobile, First on desktop) */}
+            <div className="flex flex-col space-y-6 order-2 md:order-1">
               <h2 className="text-xl text-[#FF00FF] font-medium mb-2 tracking-widest uppercase">
                 Hello, I'm
               </h2>
@@ -330,7 +371,8 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex justify-center md:justify-end mt-10 md:mt-0">
+            {/* Profile Image (First on mobile, Second on desktop) */}
+            <div className="flex justify-center md:justify-end mb-8 md:mb-0 order-1 md:order-2">
               <div className="w-72 h-72 md:w-96 md:h-96 shrink-0 relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-[#1a1a1a] shadow-[0_0_40px_rgba(255,0,255,0.25)] hover:shadow-[0_0_50px_rgba(0,255,255,0.3)] bg-black/50 flex justify-center items-center transform transition-all duration-700 hover:scale-[1.02]">
                 <img src="/profile.jpg" alt="Muhammad Hilmi Rafif Ardana" className="w-full h-full object-cover object-[50%_30%]" />
               </div>
