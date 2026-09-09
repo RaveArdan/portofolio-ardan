@@ -468,7 +468,7 @@ export default function Home() {
             {/* Profile Image (First on mobile, Second on desktop) */}
             <div className="flex justify-center md:justify-end mb-8 md:mb-0 order-1 md:order-2">
               <div className="w-72 h-72 md:w-96 md:h-96 shrink-0 relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-[#1a1a1a] shadow-[0_0_40px_rgba(255,0,255,0.25)] hover:shadow-[0_0_50px_rgba(0,255,255,0.3)] bg-black/50 flex justify-center items-center transform transition-all duration-700 hover:scale-[1.02]">
-                <img src="/profile.jpg" alt="Muhammad Hilmi Rafif Ardana" className="w-full h-full object-cover object-[50%_20%]" />
+                <img src="/profile.jpeg" alt="Muhammad Hilmi Rafif Ardana" className="w-full h-full object-cover object-[50%_93%]" />
               </div>
             </div>
           </div>
