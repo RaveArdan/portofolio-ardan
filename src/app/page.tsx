@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { FaPython, FaDatabase, FaLinux, FaNetworkWired, FaWhatsapp } from "react-icons/fa";
+import { FaPython, FaDatabase, FaLinux, FaNetworkWired, FaWhatsapp, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiCisco, SiGnubash, SiKalilinux } from "react-icons/si";
-import { Shield, Server, Wifi, ArrowUpRight, GraduationCap, Briefcase, User, Sparkles, FolderKanban, Mail, MessageSquare, Send, Menu, X, Github, Linkedin, Instagram } from "lucide-react";
+import { Shield, Server, Wifi, ArrowUpRight, GraduationCap, Briefcase, User, Sparkles, FolderKanban, Mail, MessageSquare, Send, Menu, X } from "lucide-react";
 import DarkVeil from '../components/DarkVeil';
 
 const navItems = [
@@ -350,13 +350,13 @@ export default function Home() {
               {/* Social Icons */}
               <div className="flex gap-5 pt-1 pb-2">
                 <a href="https://github.com/RaveArdan" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                  <Github className="w-6 h-6" />
+                  <FaGithub className="w-6 h-6" />
                 </a>
                 <a href="https://linkedin.com/in/rafifardana" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#0a66c2] transition-colors">
-                  <Linkedin className="w-6 h-6" />
+                  <FaLinkedin className="w-6 h-6" />
                 </a>
                 <a href="https://instagram.com/rafifardann" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#E1306C] transition-colors">
-                  <Instagram className="w-6 h-6" />
+                  <FaInstagram className="w-6 h-6" />
                 </a>
               </div>
 
