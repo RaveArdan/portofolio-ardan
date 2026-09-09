@@ -666,7 +666,7 @@ export default function Home() {
 
           <div className="pt-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {certs.map((cert, idx) => (
+              {certsList.map((cert, idx) => (
                 <a key={idx} href={cert.link} target="_blank" rel="noreferrer" className="relative rounded-2xl bg-[#111111]/80 backdrop-blur-md border border-gray-800 p-4 transform hover:scale-[1.02] transition-all duration-300 group shadow-md hover:border-[#00FFFF]/40 flex flex-col gap-4 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-[#00FFFF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   
