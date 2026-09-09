@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { FaPython, FaDatabase, FaLinux, FaNetworkWired, FaWhatsapp } from "react-icons/fa";
 import { SiCisco, SiGnubash, SiKalilinux } from "react-icons/si";
-import { Shield, Server, Wifi, ArrowUpRight, GraduationCap, Briefcase, User, Sparkles, FolderKanban, Mail, MessageSquare, Send, Menu, X } from "lucide-react";
+import { Shield, Server, Wifi, ArrowUpRight, GraduationCap, Briefcase, User, Sparkles, FolderKanban, Mail, MessageSquare, Send, Menu, X, Github, Linkedin, Instagram } from "lucide-react";
 import DarkVeil from '../components/DarkVeil';
 
 const navItems = [
@@ -171,7 +171,7 @@ const certs = [
 ];
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -269,7 +269,7 @@ export default function Home() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? "bg-[#050505]/95 backdrop-blur-md shadow-lg border-b border-[#00FFFF]/10" : "bg-transparent"}`}>
         <div className="p-6 flex justify-between items-center">
           <div>
-            <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-2xl font-extrabold tracking-tight text-white hover:text-[#00FFFF] transition-colors">
+            <a href="#home" onClick={(e) => scrollToSection(e, "home")} className="text-2xl font-extrabold tracking-tight text-white hover:text-[#00FFFF] transition-colors">
               Ardan.
             </a>
           </div>
@@ -329,29 +329,48 @@ export default function Home() {
 
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-40 pb-32 space-y-40">
         
-        {/* About / Hero */}
-        <motion.section id="about" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="scroll-mt-40">
+        {/* Home / Hero */}
+        <motion.section id="home" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="scroll-mt-40">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content (Second on mobile, First on desktop) */}
-            <div className="flex flex-col space-y-6 order-2 md:order-1">
-              <h2 className="text-xl text-[#FF00FF] font-medium mb-2 tracking-widest uppercase">
-                Hello, I'm
+            <div className="flex flex-col space-y-4 order-2 md:order-1">
+              <h2 className="text-sm md:text-base text-gray-400 font-medium tracking-widest uppercase">
+                HELLO, I'M
               </h2>
               <h1 className="text-4xl md:text-[3.5rem] lg:text-6xl font-extrabold leading-tight text-white tracking-tight drop-shadow-sm whitespace-nowrap">
                 Muhammad Hilmi <br />
-                <span className="bg-gradient-to-r from-[#00FFFF] to-[#FF00FF] text-transparent bg-clip-text">Rafif Ardana</span>
+                Rafif Ardana
               </h1>
-              <p className="text-lg text-gray-300 leading-relaxed font-light min-h-[5rem] text-justify">
-                Third-Year Student of Applied Bachelor in Internet Engineering Technology at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. I have a strong desire to build a career in the field of networking such as IT Infrastructure, IT Support, or Network Operation Center to enhance my insights and skills in a professional industrial environment. Experienced with network monitoring tools (Zabbix, PRTG), network device configuration, equipped with basic cybersecurity practices including penetration testing, SIEM log analysis, and CIS Benchmark hardening.
-              </p>
-              <div className="pt-4 flex gap-4">
-                <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="group relative px-8 py-3 bg-[#00FFFF]/10 backdrop-blur-sm border border-[#00FFFF]/30 rounded-full overflow-hidden transition-all duration-300 hover:border-[#00FFFF]/80 flex items-center shadow-[0_0_15px_rgba(0,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,255,255,0.3)]">
-                  <div className="absolute inset-0 bg-[#00FFFF] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                  <span className="relative font-semibold text-[#00FFFF] group-hover:text-white tracking-wide">Contact Me</span>
-                  <ArrowUpRight className="relative w-4 h-4 ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-[#00FFFF] group-hover:text-white" />
+              
+              <div className="pt-2 pb-2">
+                <span className="text-xl md:text-2xl font-bold text-gray-300">A </span>
+                <span className="text-xl md:text-2xl font-bold text-white border-b-2 border-[#00FFFF] pb-1">Network & Security Enthusiast</span>
+              </div>
+              
+              {/* Social Icons */}
+              <div className="flex gap-5 pt-1 pb-2">
+                <a href="https://github.com/RaveArdan" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                  <Github className="w-6 h-6" />
                 </a>
-                <a href="https://linkedin.com/in/rafifardana" target="_blank" rel="noreferrer" className="group px-8 py-3 border border-gray-600 rounded-full text-gray-400 font-medium hover:bg-gray-800 hover:text-white hover:border-gray-400 transition-all duration-300">
-                  LinkedIn
+                <a href="https://linkedin.com/in/rafifardana" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#0a66c2] transition-colors">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a href="https://instagram.com/rafifardann" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#E1306C] transition-colors">
+                  <Instagram className="w-6 h-6" />
+                </a>
+              </div>
+
+              <p className="text-lg text-gray-300 leading-relaxed font-light text-left">
+                Internet Engineering Technology student at Universitas Gadjah Mada, eager to build hands-on experience and broaden my knowledge in computer networking, IT infrastructure, network operations center, and related fields.
+              </p>
+
+              <div className="pt-4 flex gap-4">
+                <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="group relative px-6 py-2.5 bg-[#052e2e] border border-[#00FFFF]/20 rounded-full overflow-hidden transition-all duration-300 hover:border-[#00FFFF]/80 flex items-center shadow-[0_0_15px_rgba(0,255,255,0.05)]">
+                  <span className="relative font-semibold text-white tracking-wide">View Projects</span>
+                  <ArrowUpRight className="relative w-4 h-4 ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-white" />
+                </a>
+                <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="group px-6 py-2.5 border border-gray-600 rounded-full text-gray-300 font-medium hover:bg-gray-800 hover:text-white hover:border-gray-400 transition-all duration-300">
+                  Contact Me
                 </a>
               </div>
             </div>
@@ -362,6 +381,19 @@ export default function Home() {
                 <img src="/profile.jpg" alt="Muhammad Hilmi Rafif Ardana" className="w-full h-full object-cover object-[50%_30%]" />
               </div>
             </div>
+          </div>
+        </motion.section>
+
+        {/* About Me */}
+        <motion.section id="about" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="scroll-mt-40 space-y-6">
+          <h2 className="text-3xl text-white mb-6 font-extrabold flex items-center gap-3">
+            <User className="text-[#00FFFF] w-8 h-8" /> 
+            About Me
+          </h2>
+          <div className="relative rounded-3xl bg-[#111111]/80 backdrop-blur-md border border-gray-800 p-8 shadow-lg">
+            <p className="text-gray-300 leading-relaxed text-justify text-lg font-light">
+              Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (penetration testing, SIEM log analysis, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (ISP monitoring, FTTH activation, MikroTik troubleshooting, firewall automation). I have a strong desire to build a career in networking fields such as IT Infrastructure, IT Support, or Network Operations Center to enhance my insight and skills in computer networking in a professional industrial environment. Skilled in Winbox, Zabbix, PRTG, routing and switching, and network device configuration.
+            </p>
           </div>
         </motion.section>
 
@@ -718,7 +750,7 @@ export default function Home() {
               © {new Date().getFullYear()} Muhammad Hilmi Rafif Ardana. All rights reserved.
             </p>
             <button 
-              onClick={(e) => scrollToSection(e, 'about')}
+              onClick={(e) => scrollToSection(e, 'home')}
               className="text-[#FF00FF] hover:text-[#00FFFF] text-sm font-medium flex items-center gap-2 transition-colors"
             >
               Back to Top <ArrowUpRight className="w-4 h-4 transform -rotate-45" />
