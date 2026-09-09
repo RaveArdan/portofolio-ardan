@@ -9,17 +9,17 @@ import DarkVeil from '../components/DarkVeil';
 
 const t = {
   en: {
-    hero: { greeting: "HELLO, I'M", role: "Network Engineering Enthusiast", desc: "Internet Engineering Technology student at Universitas Gadjah Mada, eager to build hands-on experience and broaden my knowledge in computer networking, IT infrastructure, network operations center, and related fields.", view: "View Projects", contact: "Contact Me" },
-    about: { title: "About Me", desc: "Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (penetration testing, SIEM log analysis, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (ISP monitoring, FTTH activation, MikroTik troubleshooting, firewall automation). I have a strong desire to build a career in networking fields such as IT Infrastructure, IT Support, or Network Operations Center to enhance my insight and skills in computer networking in a professional industrial environment. Skilled in Winbox, Zabbix, PRTG, routing and switching, and network device configuration." },
+    hero: { greeting: "HELLO!, I'M", role: "Network Engineering Enthusiast", desc: "Internet Engineering Technology student at Universitas Gadjah Mada, eager to build hands-on experience and broaden my knowledge in computer networking, IT infrastructure, network operations center, and related fields.", view: "View Projects", contact: "Contact Me" },
+    about: { title: "About Me", desc: "Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (penetration testing, SIEM log normalization, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (ISP monitoring, FTTH activation, MikroTik troubleshooting, firewall automation). I have a strong desire to build a career in networking fields such as IT Infrastructure, IT Support, or Network Operations Center to enhance my insight and skills in computer networking in a professional industrial environment. Operated network monitoring tools such as (Winbox, Zabbix, PRTG). Gain a solid understanding of both theoretical and practical routing, switching, and network device configuration." },
     sections: { edu: "Education", proj: "Featured Projects", exp: "Professional Experience", org: "Organizations", skills: "Technical Skills", certs: "Certifications", contact: "Get in Touch" },
     actions: { viewProj: "View Project", viewImg: "View Full Image" },
     contact: { sub: "Let's connect and discuss how I can contribute to your team or project.", name: "Name", msg: "Your Message", send: "Send Message", sending: "Sending..." },
     footer: { brand: "Brand", nav: "Navigation", spec: "Specialties", conn: "Connect", back: "Back to Top", rights: "All rights reserved." }
   },
   id: {
-    hero: { greeting: "HALO, SAYA", role: "Penggiat Teknik Jaringan", desc: "Mahasiswa Teknologi Rekayasa Internet di Universitas Gadjah Mada, antusias membangun pengalaman praktis dan memperluas pengetahuan di bidang jaringan komputer, infrastruktur IT, Network Operations Center, dan terkait.", view: "Lihat Proyek", contact: "Kontak Saya" },
-    about: { title: "Tentang Saya", desc: "Mahasiswa tingkat tiga program Sarjana Terapan Teknologi Rekayasa Internet di Universitas Gadjah Mada, dengan pengalaman praktis dalam operasi jaringan dan keamanan siber. Pernah magang sebagai IT Architect Security di PT. Asuransi Astra Buana (penetration testing, analisis log SIEM, hardening CIS Benchmark) dan sebagai Network Operation Center di PT. Broadband Indonesia Pratama (pemantauan ISP, aktivasi FTTH, MikroTik, otomatisasi firewall). Saya memiliki keinginan kuat membangun karir di bidang jaringan guna meningkatkan wawasan dan keterampilan dalam lingkungan profesional. Mahir dalam Winbox, Zabbix, PRTG, routing dan switching, serta konfigurasi perangkat jaringan." },
-    sections: { edu: "Pendidikan", proj: "Proyek Pilihan", exp: "Pengalaman Profesional", org: "Organisasi", skills: "Keahlian Teknis", certs: "Sertifikasi", contact: "Hubungi Saya" },
+    hero: { greeting: "HALO, SAYA", role: "A Network Engineering Enthusiast", desc: "Mahasiswa Teknologi Rekayasa Internet di Universitas Gadjah Mada, dengan antusias untuk membangun pengalaman praktis dan memperluas pengetahuan di bidang jaringan komputer, infrastruktur IT, Network Operations Center, dan terkait.", view: "Lihat Proyek", contact: "Kontak Saya" },
+    about: { title: "Tentang Saya", desc: "Mahasiswa tahun ketiga program studi Sarjana Terapan Teknologi Rekayasa Internet di Universitas Gadjah Mada, dengan pengalaman praktis dalam operasi jaringan dan keamanan siber. Berpengalaman magang sebagai IT Architect Security di PT. Asuransi Astra Buana (penetration testing, normalisasi data log SIEM, hardening CIS Benchmark) dan sebagai Network Operation Center di PT. Broadband Indonesia Pratama (pemantauan jaringan pelanggan, aktivasi FTTH, konfigurasi perangkat jaringan dengan MikroTik, otomatisasi firewall). Saya memiliki keinginan kuat membangun karir di bidang jaringan untuk meningkatkan wawasan dan keterampilan dalam lingkungan profesional. Mengenal dan pernah mengoperasikan alat pemantauan jaringan seperti (Winbox, Zabbix, PRTG), Mendapatkan pemahaman yang mendalam tentang routing, switching, serta konfigurasi perangkat jaringan." },
+    sections: { edu: "Pendidikan", proj: "Proyek Pilihan", exp: "Pengalaman", org: "Organisasi", skills: "Keahlian", certs: "Sertifikasi", contact: "Hubungi Saya" },
     actions: { viewProj: "Lihat Proyek", viewImg: "Lihat Gambar Penuh" },
     contact: { sub: "Mari terhubung dan diskusikan bagaimana saya dapat berkontribusi pada tim atau proyek Anda.", name: "Nama", msg: "Pesan Anda", send: "Kirim Pesan", sending: "Mengirim..." },
     footer: { brand: "Merek", nav: "Navigasi", spec: "Keahlian", conn: "Terhubung", back: "Kembali ke Atas", rights: "Hak cipta dilindungi." }
@@ -27,7 +27,7 @@ const t = {
 };
 
 const getNavItems = (lang: "en" | "id") => [
-  { name: lang === "en" ? "About" : "Tentang", id: "about" },
+  { name: lang === "en" ? "About Me" : "Tentang Saya", id: "about" },
   { name: lang === "en" ? "Education" : "Pendidikan", id: "education" },
   { name: lang === "en" ? "Projects" : "Proyek", id: "projects" },
   { name: lang === "en" ? "Experience" : "Pengalaman", id: "experience" },
@@ -85,7 +85,7 @@ const getOrganizations = (lang: "en" | "id") => [
       "Created a design ordering system using Google Sheets to ensure all design needs were structured, clear, and precise.",
       "Collaborated with the coordinator and other divisions to ensure designs were well-designed and aligned with the KKN team's concept."
     ] : [
-      "Merancang semua kebutuhan desain digital dan cetak untuk tim KKN-PPM UGM, termasuk feed, story, sorotan Instagram, desain rompi, spanduk, dan bendera kecil.",
+      "Merancang semua kebutuhan desain digital dan cetak untuk tim KKN-PPM UGM, termasuk feed, story, sorotan Instagram, desain vest, spanduk, dan mini-flag.",
       "Membuat sistem pemesanan desain menggunakan Google Sheets untuk memastikan semua kebutuhan desain terstruktur, jelas, dan presisi.",
       "Berkolaborasi dengan koordinator dan divisi lain untuk memastikan desain yang dibuat sesuai dengan konsep tim KKN."
     ],
@@ -100,7 +100,7 @@ const getOrganizations = (lang: "en" | "id") => [
       "Supervise and coordinate decoration division staff to ensure design requirements are met and delivered on time.",
       "Collaborate with coordinators, sub-coordinators, and staff in the same or other divisions to ensure designs align with the NETCOMP event concept."
     ] : [
-      "Merancang item dekoratif seperti spanduk, backdrop photo booth, gerbang sambutan, dan kebutuhan dekorasi visual lainnya menggunakan Figma dan Canva.",
+      "Merancang desain untuk item dekoratif seperti spanduk, backdrop photobooth, gerbang sambutan, dan kebutuhan dekorasi visual lainnya menggunakan Figma dan Canva.",
       "Mengawasi dan mengoordinasikan staf divisi dekorasi untuk memastikan kebutuhan desain terpenuhi dan diselesaikan tepat waktu.",
       "Berkolaborasi dengan koordinator, sub-koordinator, dan staf di divisi yang sama atau lainnya untuk memastikan desain sejalan dengan konsep acara NETCOMP."
     ],
@@ -109,13 +109,13 @@ const getOrganizations = (lang: "en" | "id") => [
 
 const getProjects = (lang: "en" | "id") => [
   {
-    title: lang === "en" ? "Bagama (Waste Exchange System)" : "Bagama (Sistem Penukaran Sampah)",
+    title: lang === "en" ? "Bagama (Bank Sampah Gadjah Mada) | Waste Exchange System" : "Bagama (Bank Sampah Gadjah Mada) | Sistem Penukaran Sampah",
     type: lang === "en" ? "Programming Project" : "Proyek Pemrograman",
     date: "2023",
     desc: lang === "en" ? [
-      "Developed a simple program application for a waste-to-points exchange system (Bagama - Bank Sampah Gadjah Mada) using Python."
+      "Developed a simple program application for a waste-to-points exchange system (Bagama - Bank Sampah Gadjah Mada) which can be exchanged for snacks/drinks using Python."
     ] : [
-      "Mengembangkan aplikasi program sederhana untuk sistem penukaran sampah menjadi poin (Bagama - Bank Sampah Gadjah Mada) menggunakan Python."
+      "Mengembangkan aplikasi program sederhana untuk sistem penukaran sampah menjadi poin (Bagama - Bank Sampah Gadjah Mada) yang dapat ditukarkan menjadi snack/minuman menggunakan Python."
     ],
     link: "https://drive.google.com/file/d/1d_jPvQsgYZlfnFBsldFeEFqC7rkO_iGk/view?usp=sharing"
   },
@@ -168,12 +168,12 @@ const getProjects = (lang: "en" | "id") => [
 
 const getEducations = (lang: "en" | "id") => [
   {
-    degree: lang === "en" ? "Applied Bachelor of Internet Technology Engineering, 3.71/4.00" : "Sarjana Terapan Teknologi Rekayasa Internet, 3.71/4.00",
+    degree: lang === "en" ? "Applied Bachelor of Internet Technology Engineering, GPA : 3.71/4.00" : "Sarjana Terapan Teknologi Rekayasa Internet, IPK : 3.71/4.00",
     school: "Universitas Gadjah Mada - Sleman, DIY",
     date: lang === "en" ? "Jul 2023 - Aug 2027 (Expected)" : "Jul 2023 - Agu 2027 (Perkiraan)",
     desc: lang === "en" 
-      ? "Actively involved in networking and cybersecurity coursework, consistently achieving excellent academic results. Participating in practical laboratory sessions focused on IT Infrastructure and Information Security."
-      : "Aktif dalam perkuliahan jaringan dan keamanan siber, secara konsisten mencapai hasil akademik yang memuaskan. Berpartisipasi dalam sesi praktikum laboratorium yang berfokus pada Infrastruktur IT dan Keamanan Informasi.",
+      ? "Actively involved in networking and cybersecurity coursework. Also outside of lectures by joining committees. Consistently achieving excellent academic results. Participating in practical laboratory sessions focused on IT Infrastructure and Information Security."
+      : "Aktif dalam perkuliahan jaringan dan keamanan siber. Juga diluar perkuliahan dengan mengikuti kepanitiaan. Secara konsisten mencapai hasil akademik yang memuaskan. Berpartisipasi dalam sesi praktikum laboratorium yang berfokus pada Infrastruktur IT dan Keamanan Informasi.",
   },
 ];
 
@@ -468,7 +468,7 @@ export default function Home() {
             {/* Profile Image (First on mobile, Second on desktop) */}
             <div className="flex justify-center md:justify-end mb-8 md:mb-0 order-1 md:order-2">
               <div className="w-72 h-72 md:w-96 md:h-96 shrink-0 relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-[#1a1a1a] shadow-[0_0_40px_rgba(255,0,255,0.25)] hover:shadow-[0_0_50px_rgba(0,255,255,0.3)] bg-black/50 flex justify-center items-center transform transition-all duration-700 hover:scale-[1.02]">
-                <img src="/profile.jpg" alt="Muhammad Hilmi Rafif Ardana" className="w-full h-full object-cover object-[50%_30%]" />
+                <img src="/profile.jpg" alt="Muhammad Hilmi Rafif Ardana" className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </div>
