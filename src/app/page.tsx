@@ -344,7 +344,7 @@ export default function Home() {
               
               <div className="pt-2 pb-2">
                 <span className="text-xl md:text-2xl font-bold text-gray-300">A </span>
-                <span className="text-xl md:text-2xl font-bold text-white border-b-2 border-[#00FFFF] pb-1">Network & Security Enthusiast</span>
+                <span className="text-xl md:text-2xl font-bold text-white border-b-2 border-[#00FFFF] pb-1">Network Engineering Enthusiast</span>
               </div>
               
               {/* Social Icons */}
