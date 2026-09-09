@@ -10,7 +10,13 @@ import DarkVeil from '../components/DarkVeil';
 const t = {
   en: {
     hero: { greeting: "HELLO!, I'M", role: "Network Engineering Enthusiast", desc: "Internet Engineering Technology student at Universitas Gadjah Mada, eager to build hands-on experience and broaden my knowledge in computer networking, IT infrastructure, network operations center, and related fields.", view: "View Projects", contact: "Contact Me" },
-    about: { title: "About Me", desc: "Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (penetration testing, SIEM log normalization, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (ISP monitoring, FTTH activation, MikroTik troubleshooting, firewall automation). I have a strong desire to build a career in networking fields such as IT Infrastructure, IT Support, or Network Operations Center to enhance my insight and skills in computer networking in a professional industrial environment. Operated network monitoring tools such as (Winbox, Zabbix, PRTG). Gain a solid understanding of both theoretical and practical routing, switching, and network device configuration." },
+    about: { 
+      title: "About Me", 
+      desc: [
+        "Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (penetration testing, SIEM log normalization, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (ISP monitoring, FTTH activation, MikroTik troubleshooting, firewall automation).",
+        "I have a strong desire to build a career in networking fields such as IT Infrastructure, IT Support, or Network Operations Center to enhance my insight and skills in computer networking in a professional industrial environment. Operated network monitoring tools such as (Winbox, Zabbix, PRTG). Gain a solid understanding of both theoretical and practical routing, switching, and network device configuration."
+      ] 
+    },
     sections: { edu: "Education", proj: "Featured Projects", exp: "Professional Experience", org: "Organizations", skills: "Technical Skills", certs: "Certifications", contact: "Get in Touch" },
     actions: { viewProj: "View Project", viewImg: "View Full Image" },
     contact: { sub: "Let's connect and discuss how I can contribute to your team or project.", name: "Name", msg: "Your Message", send: "Send Message", sending: "Sending..." },
@@ -18,7 +24,13 @@ const t = {
   },
   id: {
     hero: { greeting: "HALO, SAYA", role: "A Network Engineering Enthusiast", desc: "Mahasiswa Teknologi Rekayasa Internet di Universitas Gadjah Mada, dengan antusias untuk membangun pengalaman praktis dan memperluas pengetahuan di bidang jaringan komputer, infrastruktur IT, Network Operations Center, dan terkait.", view: "Lihat Proyek", contact: "Kontak Saya" },
-    about: { title: "Tentang Saya", desc: "Mahasiswa tahun ketiga program studi Sarjana Terapan Teknologi Rekayasa Internet di Universitas Gadjah Mada, dengan pengalaman praktis dalam operasi jaringan dan keamanan siber. Berpengalaman magang sebagai IT Architect Security di PT. Asuransi Astra Buana (penetration testing, normalisasi data log SIEM, hardening CIS Benchmark) dan sebagai Network Operation Center di PT. Broadband Indonesia Pratama (pemantauan jaringan pelanggan, aktivasi FTTH, konfigurasi perangkat jaringan dengan MikroTik, otomatisasi firewall). Saya memiliki keinginan kuat membangun karir di bidang jaringan untuk meningkatkan wawasan dan keterampilan dalam lingkungan profesional. Mengenal dan pernah mengoperasikan alat pemantauan jaringan seperti (Winbox, Zabbix, PRTG), Mendapatkan pemahaman yang mendalam tentang routing, switching, serta konfigurasi perangkat jaringan." },
+    about: { 
+      title: "Tentang Saya", 
+      desc: [
+        "Mahasiswa tahun ketiga program studi Sarjana Terapan Teknologi Rekayasa Internet di Universitas Gadjah Mada, dengan pengalaman praktis dalam operasi jaringan dan keamanan siber. Berpengalaman magang sebagai IT Architect Security di PT. Asuransi Astra Buana (penetration testing, normalisasi data log SIEM, hardening CIS Benchmark) dan sebagai Network Operation Center di PT. Broadband Indonesia Pratama (pemantauan jaringan pelanggan, aktivasi FTTH, konfigurasi perangkat jaringan dengan MikroTik, otomatisasi firewall).",
+        "Saya memiliki keinginan kuat membangun karir di bidang jaringan untuk meningkatkan wawasan dan keterampilan dalam lingkungan profesional. Mengenal dan pernah mengoperasikan alat pemantauan jaringan seperti (Winbox, Zabbix, PRTG), Mendapatkan pemahaman yang mendalam tentang routing, switching, serta konfigurasi perangkat jaringan."
+      ] 
+    },
     sections: { edu: "Pendidikan", proj: "Proyek Pilihan", exp: "Pengalaman", org: "Organisasi", skills: "Keahlian", certs: "Sertifikasi", contact: "Hubungi Saya" },
     actions: { viewProj: "Lihat Proyek", viewImg: "Lihat Gambar Penuh" },
     contact: { sub: "Mari terhubung dan diskusikan bagaimana saya dapat berkontribusi pada tim atau proyek Anda.", name: "Nama", msg: "Pesan Anda", send: "Kirim Pesan", sending: "Mengirim..." },
@@ -481,9 +493,11 @@ export default function Home() {
             {texts.about.title}
           </h2>
           <div className="relative rounded-3xl bg-[#111111]/80 backdrop-blur-md border border-gray-800 p-8 shadow-lg">
-            <p className="text-gray-300 leading-relaxed text-justify text-lg font-light">
-              {texts.about.desc}
-            </p>
+            <div className="text-gray-300 leading-[1.5] text-justify text-lg font-light space-y-6">
+              {Array.isArray(texts.about.desc) 
+                ? texts.about.desc.map((p, i) => <p key={i}>{p}</p>) 
+                : <p>{texts.about.desc}</p>}
+            </div>
           </div>
         </motion.section>
 
