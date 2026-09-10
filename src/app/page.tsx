@@ -84,7 +84,7 @@ const getExperiences = (lang: "en" | "id") => [
       "Membangun skrip otomatisasi firewall MikroTik untuk mendeteksi/memblokir port scanning dan membatasi login perangkat melalui custom port, IP whitelisting, dan menonaktifkan layanan tidak aman.",
       "Mengganti kredensial WPA/WPA2-PSK pada perangkat CPE pelanggan (router Tenda) untuk mengatasi akses jaringan tidak sah."
     ],
-    images: ["/intern-NOC.jpeg", "/intern-noc-3.jpeg"]
+    images: ["/intern-noc-1.png", "/intern-noc-3.jpeg"]
   },
 ];
 
