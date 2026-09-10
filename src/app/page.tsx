@@ -64,6 +64,7 @@ const getExperiences = (lang: "en" | "id") => [
       "Meningkatkan dan menyusun laporan untuk penguatan keamanan infrastruktur (hardening) di seluruh server, endpoint, dan komponen jaringan berdasarkan CIS Benchmark.",
       "Berkolaborasi dengan sesama IT Security Architect, khususnya dalam tim Security Hardening."
     ],
+    images: ["/intern-asuransiastra.jpeg"]
   },
   {
     title: "Network Operation Center",
@@ -83,6 +84,7 @@ const getExperiences = (lang: "en" | "id") => [
       "Membangun skrip otomatisasi firewall MikroTik untuk mendeteksi/memblokir port scanning dan membatasi login perangkat melalui custom port, IP whitelisting, dan menonaktifkan layanan tidak aman.",
       "Mengganti kredensial WPA/WPA2-PSK pada perangkat CPE pelanggan (router Tenda) untuk mengatasi akses jaringan tidak sah."
     ],
+    images: ["/intern-NOC.jpeg", "/intern-noc-3.jpeg"]
   },
 ];
 
@@ -615,11 +617,25 @@ export default function Home() {
                     <div className="text-gray-300 font-medium mb-6 pb-4 border-b border-gray-800">
                       {exp.company}
                     </div>
-                    <ul className="text-gray-400 leading-relaxed font-light text-justify list-disc list-outside pl-4 space-y-2">
+                    <ul className="text-gray-400 leading-relaxed font-light text-justify list-disc list-outside pl-4 space-y-2 mb-6">
                       {Array.isArray(exp.desc) ? exp.desc.map((point, i) => (
                         <li key={i}>{point}</li>
                       )) : <li>{exp.desc}</li>}
                     </ul>
+                    
+                    {exp.images && exp.images.length > 0 && (
+                      <div className="mt-auto grid grid-flow-col auto-cols-fr gap-3">
+                        {exp.images.map((img, imgIdx) => (
+                          <div 
+                            key={imgIdx} 
+                            className="h-32 rounded-xl overflow-hidden border border-gray-700 hover:border-[#00FFFF] transition-all cursor-pointer shadow-sm hover:shadow-[0_0_15px_rgba(0,255,255,0.3)]" 
+                            onClick={() => setSelectedImage(img)}
+                          >
+                            <img src={img} alt={`${exp.company} ${imgIdx + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
