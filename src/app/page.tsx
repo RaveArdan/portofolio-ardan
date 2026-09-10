@@ -13,7 +13,7 @@ const t = {
     about: { 
       title: "About Me", 
       desc: [
-        "Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (penetration testing, SIEM log normalization, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (ISP monitoring, FTTH activation, MikroTik troubleshooting, firewall automation).",
+        "Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (Penetration testing, SIEM log normalization, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (Monitoring, FTTH activation, Troubleshooting, Firewall automation).",
         "I have a strong desire to build a career in networking fields such as IT Infrastructure, IT Support, or Network Operations Center to enhance my insight and skills in computer networking in a professional industrial environment. Operated network monitoring tools such as (Winbox, Zabbix, PRTG). Gain a solid understanding of both theoretical and practical routing, switching, and network device configuration."
       ] 
     },
@@ -75,13 +75,13 @@ const getExperiences = (lang: "en" | "id") => [
       "Monitored ISP network health via Zabbix and PRTG Network Monitor tracking upstream/downstream links, traffic utilization, and alarm severity levels.",
       "Activated new FTTH customers via SmartOLT: ONU/ONT registration & authorization, VLAN/service profile configuration, and Rx Power verification per GPON ITU-T G.984.",
       "Diagnosed and resolved FTTH/wireless connectivity issues remotely using Winbox (MikroTik RouterOS) analyzing packet loss and optical attenuation for FTTH, and resolving 5GHz channel interference.",
-      "Built MikroTik firewall automation scripts to detect/block port scanning and restrict device login via custom ports, IP whitelisting, and disabling insecure services.",
+      "Running MikroTik firewall automation scripts to detect/block port scanning and restrict device login via custom ports, IP whitelisting, and disabling insecure services.",
       "Changing WPA/WPA2-PSK credentials on customer CPE (Tenda routers) to remediate unauthorized network access."
     ] : [
       "Memantau kesehatan jaringan ISP melalui Zabbix dan PRTG Network Monitor dengan melacak link upstream/downstream, utilisasi trafik, dan tingkat keparahan alarm.",
       "Mengaktifkan pelanggan FTTH baru via SmartOLT: registrasi & otorisasi ONU/ONT, konfigurasi profil VLAN/layanan, dan verifikasi Rx Power berdasarkan GPON ITU-T G.984.",
       "Mendiagnosis dan menyelesaikan masalah konektivitas FTTH/nirkabel secara remote menggunakan Winbox (MikroTik RouterOS), menganalisis packet loss dan redaman optik untuk FTTH, serta mengatasi interferensi sinyal 5GHz.",
-      "Membangun skrip otomatisasi firewall MikroTik untuk mendeteksi/memblokir port scanning dan membatasi login perangkat melalui custom port, IP whitelisting, dan menonaktifkan layanan tidak aman.",
+      "Menjalankan skrip otomatisasi firewall MikroTik untuk mendeteksi/memblokir port scanning dan membatasi login perangkat melalui custom port, IP whitelisting, dan menonaktifkan layanan tidak aman.",
       "Mengganti kredensial WPA/WPA2-PSK pada perangkat CPE pelanggan (router Tenda) untuk mengatasi akses jaringan tidak sah."
     ],
     images: ["/intern-noc-1.png", "/intern-noc-3.jpeg"]
