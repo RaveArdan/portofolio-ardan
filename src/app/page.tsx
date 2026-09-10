@@ -9,7 +9,7 @@ import DarkVeil from '../components/DarkVeil';
 
 const t = {
   en: {
-    hero: { greeting: "HELLO!, I'M", role: "Network Engineering Enthusiast", desc: "Internet Engineering Technology student at Universitas Gadjah Mada, eager to build hands-on experience and broaden my knowledge in computer networking, IT infrastructure, network operations center, and related fields.", view: "View Projects", contact: "Contact Me" },
+    hero: { greeting: "HELLO!, I'M", role: "A Network Engineering Enthusiast", desc: "Internet Engineering Technology student at Universitas Gadjah Mada, eager to build hands-on experience and broaden my knowledge in computer networking, IT infrastructure, network operations center, and related fields.", view: "View Projects", contact: "Contact Me" },
     about: { 
       title: "About Me", 
       desc: [
@@ -445,7 +445,6 @@ export default function Home() {
               </h1>
               
               <div className="pt-2 pb-2">
-                {lang === "en" && <span className="text-xl md:text-2xl font-bold text-gray-300">A </span>}
                 <span className="text-xl md:text-2xl font-bold text-white border-b-2 border-[#00FFFF] pb-1">{texts.hero.role}</span>
               </div>
               
