@@ -13,7 +13,7 @@ const t = {
     about: { 
       title: "About Me", 
       desc: [
-        "Third-year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (Penetration testing, SIEM log normalization, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (Monitoring, FTTH activation, Troubleshooting, Firewall automation).",
+        "Last year student of Applied Bachelor of Internet Engineering Technology Program at Gadjah Mada University, with hands-on experience in network operations and cybersecurity. Interned as IT Architect Security at PT. Asuransi Astra Buana (Penetration testing, SIEM log normalization, CIS Benchmark hardening) and as Network Operation Center at PT. Broadband Indonesia Pratama (Monitoring, FTTH activation, Troubleshooting, Firewall automation).",
         "I have a strong desire to build a career in networking fields such as IT Infrastructure, IT Support, or Network Operations Center to enhance my insight and skills in computer networking in a professional industrial environment. Operated network monitoring tools such as (Winbox, Zabbix, PRTG). Gain a solid understanding of both theoretical and practical routing, switching, and network device configuration."
       ] 
     },
