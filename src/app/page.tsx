@@ -182,7 +182,7 @@ const getProjects = (lang: "en" | "id") => [
 
 const getEducations = (lang: "en" | "id") => [
   {
-    degree: lang === "en" ? "Applied Bachelor of Internet Technology Engineering, GPA : 3.73/4.00" : "Sarjana Terapan Teknologi Rekayasa Internet, IPK : 3.73/4.00",
+    degree: lang === "en" ? "Applied Bachelor of Internet Technology Engineering, GPA : 3.76/4.00" : "Sarjana Terapan Teknologi Rekayasa Internet, IPK : 3.76/4.00",
     school: "Universitas Gadjah Mada - Sleman, DIY",
     date: lang === "en" ? "Jul 2023 - Aug 2027 (Expected)" : "Jul 2023 - Agu 2027 (Perkiraan)",
     desc: lang === "en" 
